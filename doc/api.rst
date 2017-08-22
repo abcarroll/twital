@@ -371,8 +371,8 @@ This is an example for a valid listener:
     class MySubscriber implements EventSubscriberInterface {
         public static function getSubscribedEvents() {
             return array(
-                'compiler.post_dump' => 'modifySource'                
-                'compiler.pre_dump' => 'modifyDOM'
+                'compiler.post_dump' => 'modifySource',                
+                'compiler.pre_dump' => 'modifyDOM',
                 
                 'compiler.post_load' => 'modifyDOM',
                 'compiler.pre_load' => 'modifySource'
@@ -439,7 +439,7 @@ Here an example:
         }
         public function modifyDOM(TemplateEvent $event) {
             $template = $event->getTemplate();
-            $dom = $template->getTemplate();
+            $dom = $template->getDocument();
             
             $nodes = $dom->getElementsByTagName('mynode');
             
@@ -473,7 +473,7 @@ Here an example:
         }
         public function modifyDOM(TemplateEvent $event) {
             $template = $event->getTemplate();
-            $dom = $template->getTemplate();
+            $dom = $template->getDocument();
             
             $body = $dom->getElementsByTagName('body')->item(0);
             // do something with body node...
