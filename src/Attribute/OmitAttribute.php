@@ -34,7 +34,7 @@ class OmitAttribute implements Attribute
         $pi = $context->createControlNode("endif");
 
         if ($node->parentNode->nextSibling) {
-            $node->parentNode->insertBefore($pi, $node->parentNode->nextSibling);
+            $node->parentNode->parentNode->insertBefore($pi, $node->parentNode->nextSibling);
         } else {
             $node->parentNode->appendChild($pi);
         }
