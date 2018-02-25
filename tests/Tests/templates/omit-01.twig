@@ -1,0 +1,16 @@
+<div>
+{% block parent_block_1 %}
+    <h1>Test</h1>
+    <p>
+        Lorem ipsum dolar sit...
+    </p>
+    <div class="classy">
+        {% block block_node_1 %}
+            More lorem ipsum!
+        {% endblock %}
+    </div>
+{% endblock %}
+</div>
+{% block parent_block_2 %}
+    Further blocks
+{% endblock %}
